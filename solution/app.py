@@ -5,8 +5,8 @@ aantal_studenten = int(input("hoeveel eerste jaars studenten zijn er? "))
 lijstje_studenten_leefdtijd = []
 
 for x in range(1,  aantal_studenten + 1):
-    age = int(input(f"wat is de leefdtijd van student {x}? "))
-    lijstje_studenten_leefdtijd.append(age)
+    leefdtijd = int(input(f"wat is de leefdtijd van student {x}? "))
+    lijstje_studenten_leefdtijd.append(leefdtijd)
 
 teller = 0
 opgetelde_leeftijd = 0
