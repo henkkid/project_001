@@ -1,53 +1,37 @@
-while True:
-    try:
-        number_of_students = int(input("how many first year students are there? "))
-    except ValueError:
-        print("I do not understand that, try again")
-        continue
-    else:
-        break
 
-list_of_students_age = []
-
-for x in range(1,  number_of_students + 1):
-
-    while True:
-        try:
-            age = int(input(f"what is the age of student {x}? "))
-        except ValueError:
-            print("I do not understand that, try again")
-            continue
-        else:
-            break
-
-    list_of_students_age.append(age)
-
-count = 0
-combined_age = 0
-
-for age in list_of_students_age:
-    if age < 18:
-        count = count + 1
-
-    combined_age = combined_age + age
-
-average = combined_age / number_of_students
+aantal_studenten = int(input("hoeveel eerste jaars studenten zijn er? "))
 
 
-print(f"the number of students that is underage is {count}")
-print(f"the average age is {average}")
+lijstje_studenten_leefdtijd = []
+
+for x in range(1,  aantal_studenten + 1):
+    age = int(input(f"wat is de leefdtijd van student {x}? "))
+    lijstje_studenten_leefdtijd.append(age)
+
+teller = 0
+opgetelde_leeftijd = 0
+
+for leefdtijd in lijstje_studenten_leefdtijd:
+    if leefdtijd < 18:
+        teller = teller + 1
+
+    opgetelde_leeftijd = opgetelde_leeftijd + leefdtijd
+
+gemiddelde = opgetelde_leeftijd / aantal_studenten
 
 
-for passnum in range(len(list_of_students_age)-1, 0, -1):
-    for i in range(passnum):
-        if list_of_students_age[i]>list_of_students_age[i+1]:
-            temp = list_of_students_age[i]
-            list_of_students_age[i] = list_of_students_age[i+1]
-            list_of_students_age[i+1] = temp
+print(f"het aantal studenten dat onder de 18 jaar is is: {teller}")
+print(f"de gemiddelde leefdtijd is:  {gemiddelde}")
 
 
-print("if all the ages are sorted the result is: ")
-for item in list_of_students_age:
+for passeer_nummer in range(len(lijstje_studenten_leefdtijd)-1, 0, -1):
+    for i in range(passeer_nummer):
+        if lijstje_studenten_leefdtijd[i]>lijstje_studenten_leefdtijd[i+1]:
+            temp = lijstje_studenten_leefdtijd[i]
+            lijstje_studenten_leefdtijd[i] = lijstje_studenten_leefdtijd[i+1]
+            lijstje_studenten_leefdtijd[i+1] = temp
+
+
+print("als alle leefdtijden gesorteerd zijn dan leverd dat deze volgorde op: ")
+for item in lijstje_studenten_leefdtijd:
     print(item)
-
-
